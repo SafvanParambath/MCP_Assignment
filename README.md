@@ -1,48 +1,40 @@
-# MCP Assignment Repository
+# MCP Assignment
 
-This repository is used to submit assignments for an MCP project.
+This workspace is prepared for three MCP integrations:
 
-## Project Goal
+- Jira MCP
+- Playwright MCP
+- GitHub MCP
 
-Automate the following user flow on SauceDemo:
+## What is configured
 
-- Open `https://www.saucedemo.com/`
-- Perform login
-- Add one or more items to the cart
-- Verify cart update
+- VS Code MCP server configuration lives in [.vscode/mcp.json](.vscode/mcp.json)
+- Playwright test configuration lives in [playwright.config.ts](playwright.config.ts)
+- Local test dependencies are defined in [package.json](package.json)
 
-## Assignment Scope
+## Setup
 
-The automation should cover:
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Open the workspace in VS Code and allow the MCP configuration to load.
+3. Fill in the prompts for GitHub and Jira credentials when VS Code asks for them.
+4. Run Playwright tests:
+   ```bash
+   npm test
+   ```
 
-- Valid login flow
-- Product selection and add-to-cart action
-- Basic validation of cart state (for example, cart badge count)
+## Environment variables
 
-## Suggested Structure
+If you prefer environment-based configuration, create a `.env` file using the example below:
 
-```text
-.
-├── tests/
-├── scripts/
-├── README.md
-└── (framework/config files)
+```env
+BASE_URL=https://example.com
+GITHUB_TOKEN=your_github_pat
+JIRA_URL=https://your-company.atlassian.net
+JIRA_EMAIL=you@example.com
+JIRA_API_TOKEN=your_jira_api_token
 ```
 
-## Notes
-
-- Use test credentials provided by SauceDemo (for example, `standard_user` / `secret_sauce`) for assignment testing only.
-- Keep test code modular and reusable.
-- Include clear assertions for each critical step in the flow.
-
-## Run Instructions
-
-Add your framework-specific setup and execution commands here, for example:
-
-```bash
-# install dependencies
-<your install command>
-
-# run tests
-<your test command>
-```
+> The MCP config uses prompts by default, so you do not need to store secrets in the repository.

@@ -1,0 +1,9 @@
+# Environment secrets — never commit
+.env
+
+# Playwright test output
+test-results/
+playwright-report/
+
+# Node modules
+node_modules/
