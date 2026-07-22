@@ -41,8 +41,14 @@ Add your framework-specific setup and execution commands here, for example:
 
 ```bash
 # install dependencies
-<your install command>
+npm install
 
-# run tests
-<your test command>
+# install Playwright browsers
+npx playwright install
+
+# run all tests
+npx playwright test
+
+# run tests in headed mode
+npx playwright test --headed
 ```
